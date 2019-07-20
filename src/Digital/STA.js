@@ -1,7 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import './sta.css';
-import { updateExpression } from "@babel/types";
 // function CreateLinesInput(props){
 //     console.log("this is a prop");
 //     console.log(props);
@@ -114,7 +113,6 @@ class StaticTimingAnalysis extends React.Component{
 
             
         })
-
     }
 
     render(){
@@ -135,6 +133,7 @@ class StaticTimingAnalysis extends React.Component{
                 step="1"
                 value={this.state.value}
                 onChange={this.handleChange}/>
+               
             </div>
     
         )

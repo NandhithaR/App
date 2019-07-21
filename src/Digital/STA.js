@@ -21,16 +21,35 @@ class StaticTimingAnalysis extends React.Component{
         let output
         this.setState(prevState => {
             if(prevState.value>this.state.value){
-               output =  prevState.coordinates.map(op => {
-                    op=parseInt(op)+parseInt(prevState.value)
-                    return op
-                })
+                console.log(prevState.value)
+               output =  prevState.coordinates.map(outFunc_ahead,0);
+               function outFunc_ahead(op,index){
+                   while(index<13){
+                       if(index%2==0){
+                        op=parseInt(op)+parseInt(prevState.value)
+                       }
+                       else
+                       op=parseInt(op)
+                       index=index+1
+                   }
+                   return op;
+               }
+
             }
             else{
-                output =  prevState.coordinates.map(op => {
-                    op=parseInt(op)-parseInt(prevState.value)
-                    return op
-                })
+                console.log(prevState.value)
+                output =  prevState.coordinates.map(outFunc_back,0);
+                function outFunc_back(op,index){
+                    while(index<13){
+                        if(index%2==0){
+                         op=parseInt(op)-parseInt(prevState.value)
+                        }
+                        else
+                        op=parseInt(op)
+                        index=index+1
+                    }
+                    return op;
+                }
                 
                 console.log("Output:",output)
             }
@@ -48,13 +67,15 @@ class StaticTimingAnalysis extends React.Component{
                 <svg>
                     <polyline points="0,0, 0,50, 50,50, 50,0, 100,0, 100,50, 150,50, 150,0, 200,0, 200,50" 
                     style={{fill:"none",stroke:"black",strokeWidth:"3"}} />
-                    <polyline points={this.state.coordinates}
+                    <polyline id="output" points={this.state.coordinates}
                     style={{fill:"none",stroke:"blue",strokeWidth:"3"}} />
                 </svg>
                  <input
                 type="range"
                 className="slider"
                 step="1"
+                min="0"
+                max="10"
                 value={this.state.value}
                 onChange={this.handleChange}/>
                

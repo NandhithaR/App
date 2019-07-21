@@ -24,13 +24,18 @@ class StaticTimingAnalysis extends React.Component{
             if(prevState.value>this.state.value){
                output =  prevState.coordinates.map(outFunc_ahead,0);
                function outFunc_ahead(op,index){
-                   while(index<13){
+                   console.log("op before change:",op)
+                   console.log("value before:",prevState.value)
+                   while(index<14){
                        if(index%2==0){
-                        op=parseInt(op)+parseFloat(1)
+                        op=parseInt(op)+parseFloat(prevState.value)
+                        return op
                        }
                     //    else
                     //    op=parseInt(op)
                         index=index+2
+                        console.log("value after:",prevState.value)
+                   console.log("op after change:",op)
                    }
                    return op;
                }
@@ -41,7 +46,8 @@ class StaticTimingAnalysis extends React.Component{
                 function outFunc_back(op,index){
                     while(index<13){
                         if(index%2==0){
-                         op=parseInt(op)-parseFloat(1)
+                         op=parseInt(op)-parseFloat(prevState.value)
+                         return op
                         }
                         // else
                         // op=parseInt(op)
@@ -62,7 +68,7 @@ class StaticTimingAnalysis extends React.Component{
         return(
             <div>
                 <h1>STA Content</h1>
-                <svg>
+                <svg  height="200" width="500">
                     <polyline points="0,0, 0,50, 50,50, 50,0, 100,0, 100,50, 150,50, 150,0, 200,0, 200,50" 
                     style={{fill:"none",stroke:"black",strokeWidth:"3"}} />
                     <polyline id="output" points={this.state.coordinates}

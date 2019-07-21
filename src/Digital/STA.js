@@ -20,38 +20,40 @@ class StaticTimingAnalysis extends React.Component{
     updateOutput(){
         let output
         this.setState(prevState => {
+            console.log("Prev Coordinates:",prevState.coordinates);
+            console.log("Value:",prevState.value)
             if(prevState.value>this.state.value){
-                console.log(prevState.value)
                output =  prevState.coordinates.map(outFunc_ahead,0);
                function outFunc_ahead(op,index){
-                   while(index<13){
+                   while(index<12){
                        if(index%2==0){
+                           console.log("op:",op)
                         op=parseInt(op)+parseInt(prevState.value)
                        }
-                       else
-                       op=parseInt(op)
-                       index=index+1
+                    //    else
+                    //    op=parseInt(op)
+                        index=index+2
                    }
                    return op;
                }
+               console.log("Output Forward:",output)
 
             }
             else{
-                console.log(prevState.value)
                 output =  prevState.coordinates.map(outFunc_back,0);
                 function outFunc_back(op,index){
-                    while(index<13){
+                    while(index<12){
                         if(index%2==0){
                          op=parseInt(op)-parseInt(prevState.value)
                         }
-                        else
-                        op=parseInt(op)
-                        index=index+1
+                        // else
+                        // op=parseInt(op)
+                        index=index+2
                     }
                     return op;
                 }
                 
-                console.log("Output:",output)
+                //console.log("Output Backward:",output)
             }
 
                 return{

@@ -1,6 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import YouTube from 'react-youtube';
+import {Button} from "react-bootstrap";
+import './style.css'
 
 const opts = {
     height: '390',
@@ -11,11 +13,11 @@ const opts = {
   };
 
   const listItems = [
-    {videoId:"CeD2L6KbtVM" },
-    {videoId:"BqP6sVYlrr0" },
-    {videoId:"sUutDs7FFeA" },
-    {videoId:"XCiLHOZsQl8" },
-    {videoId:"FwJalVfvn50" }
+    {videoId:"CeD2L6KbtVM", topic_prev:"Last", topic_next:"Topic 2", topic_curr:"Topic 1"},
+    {videoId:"BqP6sVYlrr0", topic_prev:"Topic 1", topic_next:"Topic 3", topic_curr:"Topic 2"},
+    {videoId:"sUutDs7FFeA", topic_prev:"Topic 2", topic_next:"Topic 4", topic_curr:"Topic 3" },
+    {videoId:"XCiLHOZsQl8", topic_prev:"Topic 3", topic_next:"Topic 5", topic_curr:"Topic 4" },
+    {videoId:"FwJalVfvn50", topic_prev:"Topic 4", topic_curr:"Topic 5", topic_next:"First"}
   ];
 
     
@@ -91,9 +93,10 @@ class FundamentalsSlides extends React.Component {
           changeSlide={this.goTo} // function
           currentSlide={this.state.slideIndex}
           />
+        <div>Conent for the video</div>
         <div className="wrap-control">
-          <button className="btn btn-prev" value="Prev" onClick={() => this.goTo('prev')}>Prev</button>   
-          <button className="btn btn-next" value="Next" onClick={() => this.goTo('next')}>Next</button>          
+          <Button className="btn btn-prev btn-success" value="Prev" onClick={() => this.goTo('prev')}>{this.state.slideshow.topic_prev}</Button>
+          <Button className="btn btn-next btn-success" value="Next" onClick={() => this.goTo('next')}>{this.state.slideshow.topic_next}</Button>          
         </div>
         </div>
 

@@ -27,9 +27,9 @@ const routes = [
 function Interview() {
   return (
     <Router>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", width: "170%"}}>
         <div
-          style={{ 
+          style={{
             padding: "10px",
             width: "10%",
             background: "#f0f0f0"
@@ -49,7 +49,7 @@ function Interview() {
 
         </div>
 
-        <div style={{ flex: 1, padding: "10px" }}>
+        <div style={{ flex: 1, padding: "70px" }}>
           {routes.map((route, index) => (
             // Render more <Route>s with the same paths as
             // above, but different components this time.
@@ -58,7 +58,7 @@ function Interview() {
               path={route.path}
               exact={route.exact}
               component={route.main}
-            />
+            /> 
           ))}
         </div>
       </div>

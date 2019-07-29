@@ -6,7 +6,7 @@ const opts = {
     height: '390',
     width: '640',
     playerVars: { // https://developers.google.com/youtube/player_parameters
-      autoplay: 1
+      autoplay: 0
     }
   };
 
@@ -18,10 +18,6 @@ const opts = {
     {videoId:"FwJalVfvn50" }
   ];
 
-  function _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }
     
 
 function SlideItem(props){
@@ -29,17 +25,16 @@ function SlideItem(props){
         <YouTube
             videoId={props.videoId}
             opts={opts}
-            onReady={_onReady}
         />
     )
 }
 
 const Indicators = (props) => {
     const listIndicators = listItems.map((item, index) => 
-      <li
+      <div
         className={props.currentSlide === index ? 'active' : ''} 
         onClick={() => props.changeSlide(index)}
-      >{index + 1}</li>
+      ></div>
     );
     return (
       <ul className="indicators">

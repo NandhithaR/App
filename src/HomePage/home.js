@@ -6,6 +6,9 @@ import Digital from '../Digital/Digital';
 import Interview from '../Interview/Interview';
 import Analog from '../Analog/Analog';
 import HomeScreen from './HomeScreen';
+import Dropdown from 'react-dropdown'
+import 'react-dropdown/style.css'
+
 function Home(){
     return(
         <div>

@@ -1,0 +1,63 @@
+
+[
+   {
+      "Index": 1,
+      "Question": "Define: (a) bit (b) nibble (c) byte (d) word",
+      "Answer": "(a) Bit: Binary digit (Either logic-1 or logic-0)\n(b) Nibble: 4-bits together is called a nibble\n(c) Byte: 8 bits or 2 nibbles\n(d) Word: 16 bits or 2 bytes"
+    },
+    {
+      "Index": 2,
+      "Question": "What is weighted code? Give example.",
+      "Answer": "The weighted code will have a fixed weight for each position. For example, in\nnormal binary system, the decimal equivalent can be obtained by multiplying the position\nvalue with position weight and adding them together."
+    },
+    {
+      "Index": 3,
+      "Question": "Give an example for Non-weighted code?",
+      "Answer": "Unlike weighted code, non-weighted codes will not any weights. For example,\nExcess-3 code and Gray code. So the numbers that are represented using non-weighted\ncode can not be directly converted to decimal equivalents."
+    },
+   {
+      "Index": 4,
+      "Question": "What is the key feature of Excess-3 code?",
+      "Answer": "Self-complementing: The 9’s complement of an excess 3 number can be obtained\nsimply by replacing its 1’s with 0’s and 0’s with 1’s."
+    },
+    {
+      "Index": 5,
+      "Question": "In how many different ways can number 5 be represented using 2-4-2-1 code?",
+      "Answer": "2-4-2-1 represents the weights corresponding to bit positions. So the two possible\nways are: 1011, 0101"
+    },
+   {
+      "Index": 6,
+      "Question": "What are all the BCD numbers that can be uniquely represented in 2-4-2-1 weighted\ncode?",
+      "Answer": "0, 1, 8 and 9 (Only these 4 numbers will have unique representations)."
+    },
+   {
+      "Index": 7,
+      "Question": "How many unused combinations are there in the representation of BCD numbers\nusing 7-4-2-1 weighted scheme? What are they?",
+      "Answer": "As BCD numbers range from 0 to 9, there are 5 unused combinations in 7-4-2-1 code.\nThey are: 1011, 1100, 1101, 1110 and 1111."
+    },
+    {
+      "Index": 8,
+      "Question": "What is the condition for a weighted code to be self-complementary?",
+      "Answer": "A weighted code is self-complimentary if the sum of the weights equals to 9.\nE.g.: 2-4-2-1 code. Sum of the weights = 2+4+2+1 = 9."
+    },
+    {
+      "Index": 9,
+      "Question": "Convert the binary number 011101010001 to octal and hexadecimal?",
+      "Answer": "(a) Binary: 011 101 010 001\nOctal: 3 5 2 1\n(b) Binary: 0111 0101 0001\nHex: 7 5 1 (Similar concept was explained in A14 & A15)"
+    },
+    {
+      "Index": 10,
+      "Question": "Formulate a simple procedure for converting base-3 numbers to base-9?",
+      "Answer": "Consider (Xn-1 Xn-2 ........X3 X2 X1 X0) a n bit base 3 number.\nThe corresponding decimal equivalent is given by,\n3\nn-1 Xn-1 + 3n-2 Xn-2 ..... + 33 X3 + 32X2 + 31X1 + 30X0\n= 9(n-2)/2 (3 Xn-1 + Xn-2) + .............+ 91\n\n(3 X3 + X2) + 90\n\n(3 X1 + X0)\n\nSo take every to digits of base-3 number from LSB side, find their decimal equivalent, it\nwill be the corresponding base-9 digit. (Similar to the procedure of converting a binary\nnumber to octal or hex)"
+    },
+   {
+      "Index": 11,
+      "Question": "Convert (211101222211122)3 to base-9?",
+      "Answer": "Base-3: (2 11 10 12 22 21 11 22)3\nBase-9: 2 4 3 5 8 7 4 8"
+    },
+    {
+      "Index": 12,
+      "Question": "A number N has ‘n’ digits in a r-radix number system. What is its (r-1)’s\ncomplement and r’s complement?",
+      "Answer": "(rn\n– 1)-N , (rn\n–N)"
+    }
+  ]

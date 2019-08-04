@@ -5,6 +5,10 @@ import Tools from '../Tools/Tools';
 import Digital from '../Digital/Digital';
 import Interview from '../Interview/Interview';
 import Analog from '../Analog/Analog';
+import HomeScreen from './HomeScreen';
+import Dropdown from 'react-dropdown'
+import 'react-dropdown/style.css'
+
 function Home(){
     return(
         <div>
@@ -17,9 +21,10 @@ function Home(){
                     <Link to="/tools">Tools</Link>
                 </div>
                 <Route path="/digital" component={Digital} />
-                <Route path="/interview" component={Interview} />
-                <Route path="/tools" component={Tools} />
-                <Route path="/analog" component={Analog} />
+                <Route path="/interview" exact strict component={Interview} />
+                <Route path="/tools" exact strict component={Tools} />
+                <Route path="/analog" exact strict component={Analog} />
+                <Route path="/" exact strict component={HomeScreen} />
             </Router>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Quiz from './InterviewPrepTabs/Quiz'
-import CompanyQuestion from './InterviewPrepTabs/CompanyQuestions'
+import Question from './InterviewPrepTabs/Questions'
 import {Fundamentals,Sidebar} from './InterviewPrepTabs/Fundamentals'
 //import Sidebar from './InterviewPrepTabs/Sidebar'
 //import Sidebar from './InterviewPrepTabs/Sidebar'
@@ -14,12 +14,12 @@ import {Fundamentals,Sidebar} from './InterviewPrepTabs/Fundamentals'
 const routes = [
   {
     path: "/quiz",
-    exact: true,
+    //exact: true,
     main: () => <Quiz />
   },
   {
-    path: "/companyquestion",
-    main: () => <CompanyQuestion />
+    path: "/question",
+    main: () => <Question />
   },
   {
     path: "/fundamentals",
@@ -52,7 +52,7 @@ function Interview() {
               <Link to="/quiz">Quiz</Link>
             </li>
             <li>
-              <Link to="/companyquestion">Companywise Questions</Link>
+              <Link to="/question">Interview Questions</Link>
             </li>
             <li>
               <Link to="/fundamentals">Fundamentals</Link>

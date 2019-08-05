@@ -33,11 +33,11 @@ const VideoContent = [
 ];
 
   const listItems = [
-    {videoId:"CeD2L6KbtVM", topic_prev:"Last", topic_next:"Topic 2", topic_curr:"Topic 1",content:VideoContent[0]},
-    {videoId:"BqP6sVYlrr0", topic_prev:"Topic 1", topic_next:"Topic 3", topic_curr:"Topic 2",content:VideoContent[1]},
-    {videoId:"sUutDs7FFeA", topic_prev:"Topic 2", topic_next:"Topic 4", topic_curr:"Topic 3",content:VideoContent[2] },
-    {videoId:"XCiLHOZsQl8", topic_prev:"Topic 3", topic_next:"Topic 5", topic_curr:"Topic 4",content:VideoContent[3] },
-    {videoId:"FwJalVfvn50", topic_prev:"Topic 4", topic_curr:"Topic 5", topic_next:"First",content:VideoContent[4]}
+    {videoId:"CeD2L6KbtVM", topic_prev:"Last", topic_next:"Topic 2", topic_curr:"Introduction to Digital Circuits",content:VideoContent[0]},
+    {videoId:"BqP6sVYlrr0", topic_prev:"Topic 1", topic_next:"Topic 3", topic_curr:"Introduction to Digital Circuits",content:VideoContent[1]},
+    {videoId:"sUutDs7FFeA", topic_prev:"Topic 2", topic_next:"Topic 4", topic_curr:"Combinational Logic Basics",content:VideoContent[2] },
+    {videoId:"XCiLHOZsQl8", topic_prev:"Topic 3", topic_next:"Topic 5", topic_curr:"Combinatioal Circuits",content:VideoContent[3] },
+    {videoId:"FwJalVfvn50", topic_prev:"Topic 4", topic_curr:"Simplification", topic_next:"First",content:VideoContent[4]}
   ];
 
 

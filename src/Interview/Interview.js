@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Quiz from './InterviewPrepTabs/Quiz'
-import Question from './InterviewPrepTabs/Questions'
+//import Quiz from './InterviewPrepTabs/Quiz'
+import {Questions,SidebarQuiz} from './InterviewPrepTabs/Questions'
 import {Fundamentals,Sidebar} from './InterviewPrepTabs/Fundamentals'
+import Sets from './InterviewPrepTabs/Sets'
 //import Sidebar from './InterviewPrepTabs/Sidebar'
 //import Sidebar from './InterviewPrepTabs/Sidebar'
 // Each logical "route" has two components, one for
@@ -14,21 +15,21 @@ import {Fundamentals,Sidebar} from './InterviewPrepTabs/Fundamentals'
 const routes = [
   {
     path: "/quiz",
-    //exact: true,
-    main: () => <Quiz />
+    exact: true,
+    main: () => <Sets />
   },
   {
     path: "/question",
-    main: () => <Question />
+    main: () => <Questions />
   },
   {
     path: "/fundamentals",
     sidebar: () => <div>
-                  <Sidebar slidenum="0" linkname="Topic 1"/>
-                  <Sidebar slidenum="1" linkname="Topic 2"/>
-                  <Sidebar slidenum="2" linkname="Topic 3"/>
-                  <Sidebar slidenum="3" linkname="Topic 4"/>
-                  <Sidebar slidenum="4" linkname="Topic 5"/>
+                  <Sidebar slidenum="0" linkname="Introduction to Digital Circuits"/>
+                  <Sidebar slidenum="1" linkname="Introduction to Digital Circuits II"/>
+                  <Sidebar slidenum="2" linkname="Combinational Logic Basics"/>
+                  <Sidebar slidenum="3" linkname="Combinatioal Circuits"/>
+                  <Sidebar slidenum="4" linkname="Simplification"/>
                   </div>,
     main: () => <Fundamentals />
   }

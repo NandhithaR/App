@@ -7,7 +7,7 @@ import '../quiz.css'
 
 class FirstQuiz extends React.Component {
     state = {
-      currentQuestion: Math.floor(Math.random() * 11),
+      currentQuestion: Math.floor(Math.random() * 10),
       myAnswer: null,
       options: [],
       exp: [],
@@ -46,7 +46,7 @@ class FirstQuiz extends React.Component {
       }
   
       this.setState({
-        currentQuestion: Math.floor(Math.random() * 11),
+        currentQuestion: this.state.currentQuestion + 3,
         idx: this.state.idx + 1
       });
       console.log(this.state.currentQuestion);

@@ -7,12 +7,14 @@ import '../quiz.css'
 
 class ThirdQuiz extends React.Component {
     state = {
-      currentQuestion: 0,
+      currentQuestion: Math.floor(Math.random() * 10),
       myAnswer: null,
       options: [],
+      exp: [],
       score: 0,
       disabled: true,
-      isEnd: false
+      isEnd: false,
+      idx: 0
     };
   
     loadQuizData = () => {
@@ -21,7 +23,8 @@ class ThirdQuiz extends React.Component {
         return {
           questions: quizData[this.state.currentQuestion].question,
           answer: quizData[this.state.currentQuestion].answer,
-          options: quizData[this.state.currentQuestion].options
+          options: quizData[this.state.currentQuestion].options,
+          explaination: quizData[this.state.currentQuestion].explaination
         };
       });
     };
@@ -31,8 +34,11 @@ class ThirdQuiz extends React.Component {
     }
     nextQuestionHandler = () => {
       // console.log('test')
-      const { myAnswer, answer, score } = this.state;
-  
+      const { myAnswer, answer, score, exp,idx,explaination } = this.state;
+      let a = this.state.exp.slice(); //creates the clone of the state
+      a[idx] = explaination;
+    this.setState({exp: a});
+     console.log("exp:",exp);
       if (myAnswer === answer) {
         this.setState({
           score: score + 1
@@ -40,9 +46,11 @@ class ThirdQuiz extends React.Component {
       }
   
       this.setState({
-        currentQuestion: this.state.currentQuestion + 1
+        currentQuestion: this.state.currentQuestion + 3,
+        idx: this.state.idx + 1
       });
       console.log(this.state.currentQuestion);
+      console.log(this.state.idx);
     };
   
     componentDidUpdate(prevProps, prevState) {
@@ -62,27 +70,32 @@ class ThirdQuiz extends React.Component {
       this.setState({ myAnswer: answer, disabled: false });
     };
     finishHandler = () => {
-      if (this.state.currentQuestion === 4) {
+      const {exp,idx,explaination}=this.state;
+      let a = this.state.exp.slice(); //creates the clone of the state
+      a[idx] = explaination;
+    this.setState({exp: a});
+      if (this.state.idx === 4) {
         this.setState({
           isEnd: true
         });
       }
     };
     render() {
-      const { options, myAnswer, currentQuestion, isEnd } = this.state;
-  
+      const { options, myAnswer, currentQuestion, isEnd, idx,exp } = this.state;
       if (isEnd) {
         return (
           <div className="result">
             <h3>Game Over your Final score is {this.state.score} points </h3>
             <p>
-              The correct answer's for the questions was
+              Explainations
               <ul>
-                {quizData.map((item, index) => (
+               {/* <li>{exp}</li> */}
+               {exp.map((item, index) => (
                   <li className="ui floating message options" key={index}>
-                    {item.answer}
+                    {item}
                   </li>
                 ))}
+                
               </ul>
             </p>
           </div>
@@ -91,7 +104,7 @@ class ThirdQuiz extends React.Component {
         return (
           <div className="App">
             <h1>{this.state.questions} </h1>
-            <span>{`Questions ${currentQuestion}  out of ${4} remaining `}</span>
+            <span>{`Questions ${idx}  out of ${4} remaining `}</span>
             {options.map(option => (
               <p
                 key={option.id}
@@ -103,7 +116,7 @@ class ThirdQuiz extends React.Component {
                 {option}
               </p>
             ))}
-            {currentQuestion < 4 && (
+            {idx < 4 && (
               <button
                 className="ui inverted button"
                 disabled={this.state.disabled}
@@ -113,7 +126,7 @@ class ThirdQuiz extends React.Component {
               </button>
             )}
             {/* //adding a finish button */}
-            {currentQuestion === 4 && (
+            {idx === 4 && (
               <button className="ui inverted button" onClick={this.finishHandler}>
                 Finish
               </button>

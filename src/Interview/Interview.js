@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 //import Quiz from './InterviewPrepTabs/Quiz'
-import {Questions,SidebarQuiz} from './InterviewPrepTabs/Questions'
+import Questions from './InterviewPrepTabs/Questions'
 import {Fundamentals,Sidebar} from './InterviewPrepTabs/Fundamentals'
 import Sets from './InterviewPrepTabs/Sets'
 //import Sidebar from './InterviewPrepTabs/Sidebar'

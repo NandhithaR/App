@@ -1,3 +1,7 @@
-#names{
+#topic1,#topic2{
     width: 50%
+}
+#links{
+    text-align:left;
+    color: gray;
 }

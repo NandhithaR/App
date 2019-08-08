@@ -5,6 +5,21 @@ import {times} from 'lodash.times'
 import './flashcards.css'
 import flashdata from './flashcardsData.json'
 import { element } from 'prop-types';
+import { Fraction, toTex } from 'algebra.js';
+import { Node, Context, Provider } from 'react-mathjax';
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+
+function Equations (){
+    return (
+        <div>
+             <InlineMath>I_D = 0,V_(GS) + V_T</InlineMath>
+        </div>
+       
+    );
+}
+
+
   
 
 class CreateCard extends React.Component {
@@ -170,14 +185,40 @@ class CreateCard extends React.Component {
         }, {
           word: 'Folk',
           description: 'Music like Bob Dylan, man.',
-        }
+        },
+        {
+            word:"First Flashcard",
+            description:"first description"
+        },
+        {
+            word:"Second Flashcard",
+            description:"second description"
+        },
+        {
+            word:"Third Flashcard",
+            description:"third description"
+        },
+        {
+            word:"Fourth Flashcard",
+            description:"fourth description"
+        },
+        {
+            word:"Fifth Flashcard",
+            description:"fifth description"
+        },
+        {
+            word:"Sixth Flashcard",
+            description:<Equations />
+
+        },
+
       ]),
         //cardNumber: 0
-        cardNumber: Math.floor(Math.random() * (2 - 0 + 1)) + 0
+        cardNumber: Math.floor(Math.random() * (8 - 1 + 1)) + 1
       };
       this.boundCallback = this.hideCreateCard.bind(this);
       this.boundCreateCard = this.setCard.bind(this);
-      this.boundShowPrevCard = this.showPrevCard.bind(this);
+      this.boundShowPrevCard = this.showPrevCard.bind(this)
       this.boundShowNextCard = this.showNextCard.bind(this);
     }
     

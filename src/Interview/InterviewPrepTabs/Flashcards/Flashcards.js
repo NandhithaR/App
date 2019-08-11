@@ -10,7 +10,61 @@ import { Node, Context, Provider } from 'react-mathjax';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 
-function Equations (){
+//n channel mosfet
+var a = `
+&lt;Math&gt;I_D = 0, for V_{GS} < V_T&lt;Math&gt;`;
+var b = `
+&lt;Math&gt;I_D = 0, for V_{GS} < V_T;&lt;Math&gt;`;
+
+
+function Equations_nzero (){
+    return (
+        <div>
+             <div>
+                {a.split("&lt;Math&gt;").map((ele, id)=>{
+                return(<InlineMath>{ele}</InlineMath>)
+              })}
+            </div>
+        </div>
+    );
+}
+
+function Equations_nlin (){
+    return (
+        <div>
+             <InlineMath>I_D(lin) =  μ.C_o 2 . \frac W L . [2 * (V_gs - V_t) . V_d -V_d^2] </InlineMath>
+        </div>
+       
+    );
+}
+
+function Equations_nsat (){
+    return (
+        <div>
+            <InlineMath>I_D(lin) = (\mu_p*C_x)/ 2 * \frac W L * [2 * (V_g - V_t)^2 * (1+ \lambda*V_d)] </InlineMath>
+        </div>
+       
+    );
+}
+function Equations_pzero (){
+    return (
+        <div>
+             <InlineMath>I_D = 0,V_(GS) + V_T</InlineMath>
+        </div>
+       
+    );
+}
+
+function Equations_plin (){
+    return (
+        <div>
+             <InlineMath>I_D = 0,V_(GS) + V_T</InlineMath>
+        </div>
+       
+    );
+}
+
+function Equations_psat (){
     return (
         <div>
              <InlineMath>I_D = 0,V_(GS) + V_T</InlineMath>
@@ -200,15 +254,15 @@ class CreateCard extends React.Component {
         },
         {
             word:"Fourth Flashcard",
-            description:"fourth description"
+            description:<Equations_nsat />
         },
         {
             word:"Fifth Flashcard",
-            description:"fifth description"
+            description:<Equations_nzero />
         },
         {
             word:"Sixth Flashcard",
-            description:<Equations />
+            description:<Equations_nlin />
 
         },
 

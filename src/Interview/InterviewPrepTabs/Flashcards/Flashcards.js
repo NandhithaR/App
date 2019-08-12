@@ -16,6 +16,14 @@ var a = `
 var b = `
 &lt;Math&gt;I_D = 0, for V_{GS} < V_T;&lt;Math&gt;`;
 
+function Ohms_law(){
+  return(
+    <div>
+      <InlineMath>V=\frac I R</InlineMath>
+    </div>
+  )
+}
+
 
 function Equations_nzero (){
     return (
@@ -231,8 +239,11 @@ class CreateCard extends React.Component {
       super();
       this.state = {
         cards: fromJS([{
-          word: 'Jazz',
-          description: 'A type of music of black American origin characterized by improvisation, syncopation, and usually a regular or forceful rhythm, emerging at the beginning of the 20th century.',
+          word: <div>
+            <p>Ohm’s Law</p>
+            <p>The resistor's current I in amps (A) is equal to the resistor's voltage V in volts (V) divided by the resistance R in ohms (Ω)</p>
+            </div>,
+          description:<Ohms_law />,
         }, {
           word: 'Reggae',
           description: 'Music like Bob Marley, man.',
@@ -242,7 +253,7 @@ class CreateCard extends React.Component {
         },
         {
             word:"First Flashcard",
-            description:"first description"
+            description: "First!"
         },
         {
             word:"Second Flashcard",

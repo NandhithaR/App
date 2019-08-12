@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Questions from './InterviewPrepTabs/Questions'
 import {Fundamentals,Sidebar} from './InterviewPrepTabs/Fundamentals'
 import Sets from './InterviewPrepTabs/Sets'
-import Flashcards from "./InterviewPrepTabs/Flashcards/Flashcards";
+import FlashcardsLinks from './InterviewPrepTabs/Flashcards/FlashcardsLinks'
+//import Flashcards from "./InterviewPrepTabs/Flashcards/Flashcards";
 //import Sidebar from './InterviewPrepTabs/Sidebar'
 //import Sidebar from './InterviewPrepTabs/Sidebar'
 // Each logical "route" has two components, one for
@@ -25,7 +26,7 @@ const routes = [
   },
   {
     path: "/flashcards",
-    main: () => <Flashcards />
+    main: () => <FlashcardsLinks />
   },
   {
     path: "/fundamentals",

@@ -312,12 +312,12 @@ class CreateCard extends React.Component {
       const times = this.state.cards.size;
       let arr = [];
       [...Array(times)].map((e, num) => {
-        const dotClass = num  === this.state.cardNumber ? 'active' : '';
+        //const dotClass = num  === this.state.cardNumber ? 'active' : '';
         arr.push(
-          <span 
-            className={`card-container__dot fa fa-circle ${dotClass}`}
-            onClick={() => this.setState({cardNumber: num})}
-          />
+          // <span 
+          //   className={`card-container__dot fa fa-circle ${dotClass}`}
+          //   onClick={() => this.setState({cardNumber: num})}
+          // />
         )
       });
       return arr;
@@ -332,7 +332,7 @@ class CreateCard extends React.Component {
               backContent={card.get('description')}
               showNextCard={this.boundShowNextCard}
               showPrevCard = {this.boundShowPrevCard}
-              cardNumber={this.state.cardNumber}
+              //cardNumber={this.state.cardNumber}
             />
             );
         })

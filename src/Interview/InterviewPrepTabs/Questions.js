@@ -1,10 +1,14 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import questions from './InterviewQuestionsData/interviewques.json'
+import questions from './InterviewQuestionsData/interviewques'
 import './questions.css'
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import * as Scroll from 'react-scroll';
 import { Link,DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+//import sunrise from './InterviewQuestionsData/circuitimages/sunrise.jpeg'
+//import d from './InterviewQuestionsData/ques'
+
+
 
 class Questions extends React.Component {
 
@@ -80,16 +84,17 @@ class Questions extends React.Component {
           <Element name="test1" className="element" >
           <div id="topic1">
             <h2>Topic1</h2>
-          {questions.map((element,index)=>{
-                return(<div>                        
-                        <p><b>{element.Question}</b></p>
-                        <p>{element.Answer}</p>
-                        </div>)
-            })}
+              {Object.keys(questions).map(key => (
+                <div>
+                  {questions[key].type}
+                  <p>{questions[key].Question}</p>
+                  <img src={questions[key].Image} key={key} />
+                </div>
+              ))}
           </div>
         </Element>
 
-          <Element name="test2" className="element">
+          {/* <Element name="test2" className="element">
           <div id="topic2">
             <h2>Topic2</h2>
           {questions.map((element,index)=>{
@@ -100,7 +105,7 @@ class Questions extends React.Component {
             })}
           </div>
           
-        </Element>
+        </Element> */}
 
           <a onClick={this.scrollToTop}>To the top!</a>
       </div>

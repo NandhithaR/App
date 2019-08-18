@@ -22,7 +22,7 @@
     },
     {
       "id": 4,
-      "question": "In which of these is reverse recovery time nearly zero?",
+      "question": "<img src=http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png",
       "options": ["Zener diode", "Tunnel diode", "Schottky diode","PIN diode"],
       "answer": "Schottky diode",
       "explaination": "Explanation"

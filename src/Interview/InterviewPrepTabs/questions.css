@@ -5,3 +5,11 @@
     text-align:left;
     color: gray;
 }
+
+#ques{
+    font-weight: bold;
+}
+
+#ans{
+    color: green;
+}

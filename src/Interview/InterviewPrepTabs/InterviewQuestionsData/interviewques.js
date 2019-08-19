@@ -29,7 +29,7 @@ import circuit33 from './circuitimages/circuit33.gif'
 const questions={
   1:{
     Index: 1,
-    Question: "Two capacitors are connected in parallel through a switch. C1= 1uF, C2= 0.25uF. Initially the switch is open, C1 is charged to 10V. What happens if we close the switch?",
+    Question:"Two capacitors are connected in parallel through a switch. C1= 1uF, C2= 0.25uF. Initially the switch is open, C1 is charged to 10V. What happens if we close the switch?",
     Image:circuit1,
     Answer: "The equation for charge is Q=CU After closing the switch the charge will be distributed between the two caps. \nSince there are no losses in the circuit the amount of charge remains the same: \nU1C1 + U2C2 = U3(C1+C2) \nBoth caps will share the same voltage potential U3, \nU3 =  (U1C1+U2C2)/(C1+C2) = (10*1 + 0*0.25)/1+0.25 = 8 U3= 8V. Voltage on the cap C2 in this scenario builds up almost instantly. Why, because Tau=R*C2 and since R is assumed as zero, Tau =0s. Thus, there appears to be a sharp voltage build-up on C2. As for the spark, some energy will be lost and the voltage on both caps be slightly less that 8V. ",
     AnswerImage:""

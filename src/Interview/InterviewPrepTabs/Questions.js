@@ -87,7 +87,7 @@ class Questions extends React.Component {
               {Object.keys(questions).map(key => (
                 <div>
                   {questions[key].type}
-                  <p>{questions[key].Question}</p>
+                  <p>{questions[key].Index}   {questions[key].Question}</p>
                   <img src={questions[key].Image} key={key} />
                 </div>
               ))}

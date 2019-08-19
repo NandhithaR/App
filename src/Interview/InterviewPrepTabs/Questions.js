@@ -7,6 +7,7 @@ import * as Scroll from 'react-scroll';
 import { Link,DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 //import sunrise from './InterviewQuestionsData/circuitimages/sunrise.jpeg'
 //import d from './InterviewQuestionsData/ques'
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 
 
@@ -15,7 +16,14 @@ class Questions extends React.Component {
   constructor(props) {
     super(props);
     this.scrollToTop = this.scrollToTop.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
   }
+
+  toggle() {
+    this.setState(state => ({ collapse: !state.collapse }));
+  }
+
 
   componentDidMount() {
 
@@ -76,6 +84,8 @@ class Questions extends React.Component {
                 <ul id="links">
                   <li><Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >Topic1</Link></li>
                   <li><Link activeClass="active" className="test2" to="test2" spy={true} smooth={true} duration={500} >Topic2</Link></li>
+                  <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Show Answer</Button>
+
                 </ul>
               {/* </div>
             </div>
@@ -89,6 +99,12 @@ class Questions extends React.Component {
                   {questions[key].type}
                   <p>{questions[key].Index}   {questions[key].Question}</p>
                   <img src={questions[key].Image} key={key} />
+                 <div>
+                    <Collapse isOpen={this.state.collapse}>
+                          <p>{questions[key].Answer}</p>
+                          <img src={questions[key].AnswerImage} />
+                    </Collapse>
+                 </div>
                 </div>
               ))}
           </div>

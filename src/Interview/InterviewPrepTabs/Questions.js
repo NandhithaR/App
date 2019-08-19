@@ -5,9 +5,7 @@ import './questions.css'
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import * as Scroll from 'react-scroll';
 import { Link,DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-//import sunrise from './InterviewQuestionsData/circuitimages/sunrise.jpeg'
-//import d from './InterviewQuestionsData/ques'
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse, Button} from 'reactstrap';
 
 
 
@@ -18,6 +16,7 @@ class Questions extends React.Component {
     this.scrollToTop = this.scrollToTop.bind(this);
     this.toggle = this.toggle.bind(this);
     this.state = { collapse: false };
+    
   }
 
   toggle() {
@@ -76,6 +75,7 @@ class Questions extends React.Component {
     Events.scrollEvent.remove('end');
   }
   render() {
+    const { details, expanded } = this.state;
     return (
       <div>
           {/* <nav className="navbar navbar-default navbar-fixed-top">
@@ -84,7 +84,7 @@ class Questions extends React.Component {
                 <ul id="links">
                   <li><Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >Topic1</Link></li>
                   <li><Link activeClass="active" className="test2" to="test2" spy={true} smooth={true} duration={500} >Topic2</Link></li>
-                  <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Show Answer</Button>
+                  <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Show/Hide Answer</Button>
 
                 </ul>
               {/* </div>
@@ -97,14 +97,15 @@ class Questions extends React.Component {
               {Object.keys(questions).map(key => (
                 <div>
                   {questions[key].type}
-                  <p>{questions[key].Index}   {questions[key].Question}</p>
+                  <p id="ques">{questions[key].Index}.  {questions[key].Question}</p>
                   <img src={questions[key].Image} key={key} />
                  <div>
                     <Collapse isOpen={this.state.collapse}>
-                          <p>{questions[key].Answer}</p>
+                          <p id="ans">{questions[key].Answer}</p>
                           <img src={questions[key].AnswerImage} />
                     </Collapse>
                  </div>
+                
                 </div>
               ))}
           </div>

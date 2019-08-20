@@ -13,3 +13,20 @@
 #ans{
     color: green;
 }
+
+.item + .item {
+    margin-top: 11px;
+  }
+  
+  .question {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .answer {
+     display: none;
+  }
+  
+  .open .answer {
+    display: block;
+  }

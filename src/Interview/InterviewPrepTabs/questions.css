@@ -11,7 +11,7 @@
 }
 
 #ans{
-    color: green;
+    color:#175fa9;
 }
 
 .item + .item {
@@ -21,6 +21,7 @@
   .question {
     font-weight: bold;
     cursor: pointer;
+    font-family: sans-serif;
   }
   
   .answer {
@@ -29,4 +30,10 @@
   
   .open .answer {
     display: block;
+    font-family: sans-serif;
   }
+
+  /* img {
+    width: 100px;
+    height: 100px;
+  } */

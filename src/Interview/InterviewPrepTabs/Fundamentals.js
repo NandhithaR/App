@@ -143,7 +143,7 @@ export class FundamentalsSlides extends React.Component {
           />
           <div className="margin-top--xl margin-bottom--lg">
           <nav className="pagination-nav">
-            <div className="pagination-nav__item" id="prev">
+            <div className="pagination-nav__item pagination-nav__item--prev" id="prev">
               <a className="pagination-nav__link" value="Prev" onClick={() => this.goTo('prev')}>
                 <h5 className="pagination-nav__link--sublabel">Previous</h5>
                 <h4 className="pagination-nav__link--label">« {this.state.slideshow.topic_prev}</h4>

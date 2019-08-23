@@ -94,7 +94,7 @@ class FirstQuiz extends React.Component {
               <ul>
                {/* <li>{exp}</li> */}
                {exp.map((item, index) => (
-                  <li className="ui floating message options" key={index}>
+                  <li key={index}>
                     {item}
                   </li>
                 ))}
@@ -105,8 +105,8 @@ class FirstQuiz extends React.Component {
         );
       } else {
         return (
-          <div className="App">
-            <h1>{this.state.questions} </h1>
+          <div className="quiz">
+            <h1 className="question">{this.state.questions} </h1>
             <Timer startCount='0'/>
             <span>{`Questions ${idx}  out of ${4} remaining `}</span>
             {options.map(option => (

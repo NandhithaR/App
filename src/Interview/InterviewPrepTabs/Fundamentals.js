@@ -141,10 +141,22 @@ export class FundamentalsSlides extends React.Component {
           changeSlide={this.goTo} // function
           currentSlide={this.state.slideIndex}
           />
-        <div className="wrap-control">
-          <Button className="btn btn-prev btn-success" value="Prev" onClick={() => this.goTo('prev')}>{this.state.slideshow.topic_prev}</Button>
-          <Button className="btn btn-next btn-success" value="Next" onClick={() => this.goTo('next')}>{this.state.slideshow.topic_next}</Button>          
-        </div>
+          <div className="margin-top--xl margin-bottom--lg">
+          <nav className="pagination-nav">
+            <div className="pagination-nav__item" id="prev">
+              <a className="pagination-nav__link" value="Prev" onClick={() => this.goTo('prev')}>
+                <h5 className="pagination-nav__link--sublabel">Previous</h5>
+                <h4 className="pagination-nav__link--label">« {this.state.slideshow.topic_prev}</h4>
+              </a>
+            </div>
+            <div className="pagination-nav__item pagination-nav__item--next" id="next">
+              <a id="contentnext" className="pagination-nav__link" value="Next" onClick={() => this.goTo('next')}>
+                <h5 className="pagination-nav__link--sublabel">Next</h5>
+                <h4 className="pagination-nav__link--label">{this.state.slideshow.topic_next} »</h4>
+              </a>
+            </div>
+          </nav>
+          </div>
         </div>
 
     );

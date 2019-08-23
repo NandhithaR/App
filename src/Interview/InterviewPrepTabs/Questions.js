@@ -106,12 +106,15 @@ class Questions extends React.Component {
   render() {
     const { details, expanded,selectedQuestion } = this.state;
     return (
-      <div>
-        <ul id="links">
+      <div id="container">
+        <div id="links">
+        <ul>
           <li><Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} >Topic1</Link></li>
           <li><Link activeClass="active" className="test2" to="test2" spy={true} smooth={true} duration={500} >Topic2</Link></li>
+          <li><Link activeClass="active" className="test3" to="test3" spy={true} smooth={true} duration={500} >Topic3</Link></li>
         </ul>
-
+        </div>
+        <div id="content">
         <Element name="test1" className="element" >
           <div id="topic1">
             <h2>Topic1</h2>
@@ -148,6 +151,8 @@ class Questions extends React.Component {
         </Element> */}
 
           <a onClick={this.scrollToTop}>To the top!</a>
+          </div>
+          <div id="clear"></div>
       </div>
     );
   }

@@ -1,9 +1,11 @@
-#topic1,#topic2{
-    width: 50%
-}
+/* #topic1,#topic2{
+    width: 90%
+} */
 #links{
-    text-align:left;
+    float:right;
     color: gray;
+    cursor: pointer;
+    width: 80px;
 }
 
 #ques{
@@ -20,20 +22,42 @@
   
   .question {
     font-weight: bold;
-    cursor: pointer;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 93%
   }
   
   .answer {
      display: none;
+     font-size: 85%
   }
   
   .open .answer {
     display: block;
-    font-family: sans-serif;
+    font-family: Arial;
   }
 
-  /* img {
-    width: 100px;
+  #container {
+    margin: auto;
+    width: 800px;
+}
+
+#content {
+    float: left;
+    width: 700px;
+    margin-left: -100px;
+    font-family: Arial;
+}
+#content:after {
+    content: "";
+    background-color: grey;
+    position: absolute;
+    width: 1px;
     height: 100px;
-  } */
+    top: 6px;
+    left: 120%;
+    display: block;
+  }
+
+#clear {
+    clear: both;
+}

@@ -4,6 +4,7 @@ import ReactDOM from "react-dom"
 import quizData from '../QuizData/QuizData.json' 
 import { BrowserRouter as Router, Route, Link,Redirect } from "react-router-dom";
 import '../quiz.css'
+import Timer from '../Timer'
 
 class FourthQuiz extends React.Component {
     state = {
@@ -14,7 +15,8 @@ class FourthQuiz extends React.Component {
       score: 0,
       disabled: true,
       isEnd: false,
-      idx: 0
+      idx: 0,
+      count:0
     };
   
     loadQuizData = () => {
@@ -95,8 +97,8 @@ class FourthQuiz extends React.Component {
                     {item}
                   </li>
                 ))}
-                
               </ul>
+              <p>count:{this.state.count}</p>
             </p>
           </div>
         );
@@ -104,6 +106,8 @@ class FourthQuiz extends React.Component {
         return (
           <div className="App">
             <h1>{this.state.questions} </h1>
+            <Timer startCount={this.state.count}/>
+            {/* {this.setState({count:this.state.count})} */}
             <span>{`Questions ${idx}  out of ${4} remaining `}</span>
             {options.map(option => (
               <p

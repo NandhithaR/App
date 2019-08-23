@@ -1,17 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-//import Quiz from './InterviewPrepTabs/Quiz'
 import Questions from './InterviewPrepTabs/Questions'
 import {Fundamentals,Sidebar} from './InterviewPrepTabs/Fundamentals'
 import Sets from './InterviewPrepTabs/Sets'
 import FlashcardsLinks from './InterviewPrepTabs/Flashcards/FlashcardsLinks'
-//import Flashcards from "./InterviewPrepTabs/Flashcards/Flashcards";
-//import Sidebar from './InterviewPrepTabs/Sidebar'
-//import Sidebar from './InterviewPrepTabs/Sidebar'
-// Each logical "route" has two components, one for
-// the sidebar and one for the main area. We want to
-// render both of them in different places when the
-// path matches the current URL.
 
 
 const routes = [
@@ -30,12 +22,12 @@ const routes = [
   },
   {
     path: "/fundamentals",
-    sidebar: () => <div>
-                  <Sidebar slidenum="0" linkname="Introduction to Digital Circuits"/>
-                  <Sidebar slidenum="1" linkname="Introduction to Digital Circuits II"/>
-                  <Sidebar slidenum="2" linkname="Combinational Logic Basics"/>
-                  <Sidebar slidenum="3" linkname="Combinatioal Circuits"/>
-                  <Sidebar slidenum="4" linkname="Simplification"/>
+    sidebar: () => <div className="w3-sidebar w3-bar-block w3-light-gray">
+                  <a className="w3-bar-item w3-button w3-border-bottom"><Sidebar slidenum="0" linkname="Introduction to Digital Circuits"/></a>
+                  <a className="w3-bar-item w3-button w3-border-bottom"><Sidebar slidenum="1" linkname="Introduction to Digital Circuits II"/></a>
+                  <a className="w3-bar-item w3-button w3-border-bottom"><Sidebar slidenum="2" linkname="Combinational Logic Basics"/></a>
+                  <a className="w3-bar-item w3-button w3-border-bottom"><Sidebar slidenum="3" linkname="Combinatioal Circuits"/></a>
+                  <a className="w3-bar-item w3-button w3-border-bottom"><Sidebar slidenum="4" linkname="Simplification"/></a>
                   </div>,
     main: () => <Fundamentals />
   }
@@ -46,26 +38,25 @@ const routes = [
 function Interview() {
   return (
     <Router>
-      <div style={{ display: "flex", width: "170%"}}>
+      <div style={{ display: "flex"}}>
         <div
           style={{
             padding: "10px",
             width: "10%",
-            background: "#f0f0f0"
           }}
         >
-          <ul style={{ listStyleType: "none", padding: 0 }}>
+          <ul style={{ listStyleType: "none", padding: 0, width:"170%" }} className="w3-bar-block w3-light-grey">
             <li>
-              <Link to="/quiz">Quiz</Link>
+              <Link to="/quiz" className="w3-bar-item w3-button w3-border-bottom">Quiz</Link>
             </li>
             <li>
-              <Link to="/question">Interview Questions</Link>
+              <Link to="/question" className="w3-bar-item w3-button w3-border-bottom">Interview Questions</Link>
             </li>
             <li>
-              <Link to="/flashcards">Flashcards</Link>
+              <Link to="/flashcards" className="w3-bar-item w3-button w3-border-bottom">Flashcards</Link>
             </li>
             <li>
-              <Link to="/fundamentals">Fundamentals</Link>
+              <Link to="/fundamentals" className="w3-bar-item w3-button w3-border-bottom">Fundamentals</Link>
             </li>
           </ul>
           {routes.map((route, index) => (
@@ -80,7 +71,7 @@ function Interview() {
           ))}
         </div>
 
-        <div style={{ flex: 1, padding: "70px" }}>
+        <div style={{ flex: 1, padding: "150px" , top:"-100px"}}>
           {routes.map((route, index) => (
             // Render more <Route>s with the same paths as
             // above, but different components this time.

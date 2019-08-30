@@ -1,0 +1,27 @@
+#container {
+    margin: auto;
+    width: 800px;
+}
+#left{
+    float:right;
+    color: gray;
+    cursor: pointer;
+    width: 80px;
+}
+#right {
+    float: left;
+    width: 700px;
+    margin-left: -100px;
+    font-family: Arial;
+}
+
+#right:after {
+    content: "";
+    background-color: grey;
+    position: absolute;
+    width: 1px;
+    height: 200px;
+    top: 6px;
+    left: 120%;
+    display: block;
+  }

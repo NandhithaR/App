@@ -98,6 +98,7 @@ html, body {
   display: flex;
   justify-content: center;
   font-weight: 400;
+  color: black
   
   /* span {
     font-size: 1.3em;
@@ -203,7 +204,8 @@ html, body {
   z-index: 100;
   font-size: 1.5em;
   bottom: 20em;
-  left: 60%;
+  left: 50%;
+  top:20%;
   transform: translateX(-50%);
   cursor: pointer;
   color: #333;
@@ -281,3 +283,9 @@ html, body {
     transition: 0.5s;
   } 
 } */
+#heading{
+  color: black;
+  bottom:500%;
+  right:-3%;
+  top:600%
+}

@@ -91,7 +91,7 @@ class SecondQuiz extends React.Component {
               Review these Concepts
               <ul>
                {exp.map((item, index) => (
-                  <li className="ui floating message options" key={index}>
+                  <li key={index}>
                     {item}
                   </li>
                 ))}

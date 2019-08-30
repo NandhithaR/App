@@ -92,7 +92,7 @@ class ThirdQuiz extends React.Component {
               <ul>
                {/* <li>{exp}</li> */}
                {exp.map((item, index) => (
-                  <li className="ui floating message options" key={index}>
+                  <li key={index}>
                     {item}
                   </li>
                 ))}

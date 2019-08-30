@@ -124,7 +124,7 @@ class Questions extends React.Component {
                     {item.Index}.{item.Question}
                     <img src={item.Image} />
                   </p>
-                  <Button color="success" onClick={() => this.openQuestion(index)} style={{ marginBottom: '1rem' }}>Answer</Button>
+                  <Button id="ansbutton" onClick={() => this.openQuestion(index)} style={{ marginBottom: '1rem' }}>Answer</Button>
                   <p id="ans" className='answer'>
                     {item.Answer}
                     <img src={item.AnswerImage} />

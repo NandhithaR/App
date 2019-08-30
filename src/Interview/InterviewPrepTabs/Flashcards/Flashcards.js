@@ -150,31 +150,7 @@ class CreateCard extends React.Component {
       );
     }
   }
-  
-  class Header extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        showModal: false
-      }
-    }
-     
-    render() {
-      return (
-        <div className='header'>
-          <div className='header-content header-content__left'>
-            
-          </div>
-          <div className='header-content header-content__middle'>
-            Flash Cards
-          </div>
-          <div className='header-content header-content__right'>
-            
-          </div>
-        </div>
-      )
-    }
-  }
+ 
   class Card extends React.Component {
     
     constructor() {
@@ -196,7 +172,7 @@ class CreateCard extends React.Component {
           className={`card ${cardClass}`}
           onClick={() => this.setState({showAnswer: !this.state.showAnswer})}
         >
-        <span className='card__counter'>{this.props.cardNumber + 1}</span>
+        {/* <span className='card__counter'>{this.props.cardNumber + 1}</span> */}
           <div 
             className='card__flip-card'
             onClick={ () => {
@@ -366,7 +342,7 @@ class CreateCard extends React.Component {
     render() {
       return (
         <div className='wrapper'>
-          <Header />
+          <h2 id="heading">Flahscards</h2>
           <div className='content-wrapper'>
             <CardContainer />
           </div>

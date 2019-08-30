@@ -34,12 +34,12 @@
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #a020f0;
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color:white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -51,7 +51,10 @@
   color: black;
 }
 
-.topnav a.active {
-  background-color: #4CAF50;
+/* .topnav a.active {
+  background-color: #a020f0;
   color: white;
+} */
+body{
+  background-color:white;
 }

@@ -42,3 +42,13 @@
     list-style-type: none;
   }
   
+#timer{
+  top:1%;
+  bottom:20%;
+  left:80%;
+  right: 55%;
+  border: 2px solid #4baf50;
+  width: 125px;
+  background-color: #4baf50
+}
+

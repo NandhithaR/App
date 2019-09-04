@@ -9,80 +9,10 @@ import { Fraction, toTex } from 'algebra.js';
 import { Node, Context, Provider } from 'react-mathjax';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
-
-//n channel mosfet
-var a = `
-&lt;Math&gt;I_D = 0, for V_{GS} < V_T&lt;Math&gt;`;
-var b = `
-&lt;Math&gt;I_D = 0, for V_{GS} < V_T;&lt;Math&gt;`;
-
-function Ohms_law(){
-  return(
-    <div>
-      <InlineMath>V=\frac I R</InlineMath>
-    </div>
-  )
-}
-
-
-function Equations_nzero (){
-    return (
-        <div>
-             <div>
-                {a.split("&lt;Math&gt;").map((ele, id)=>{
-                return(<InlineMath>{ele}</InlineMath>)
-              })}
-            </div>
-        </div>
-    );
-}
-
-function Equations_nlin (){
-    return (
-        <div>
-             <InlineMath>I_D(lin) =  μ.C_o 2 . \frac W L . [2 * (V_gs - V_t) . V_d -V_d^2] </InlineMath>
-        </div>
-       
-    );
-}
-
-function Equations_nsat (){
-    return (
-        <div>
-            <InlineMath>I_D(lin) = (\mu_p*C_x)/ 2 * \frac W L * [2 * (V_g - V_t)^2 * (1+ \lambda*V_d)] </InlineMath>
-        </div>
-       
-    );
-}
-function Equations_pzero (){
-    return (
-        <div>
-             <InlineMath>I_D = 0,V_(GS) + V_T</InlineMath>
-        </div>
-       
-    );
-}
-
-function Equations_plin (){
-    return (
-        <div>
-             <InlineMath>I_D = 0,V_(GS) + V_T</InlineMath>
-        </div>
-       
-    );
-}
-
-function Equations_psat (){
-    return (
-        <div>
-             <InlineMath>I_D = 0,V_(GS) + V_T</InlineMath>
-        </div>
-       
-    );
-}
-
-
-  
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {Ohms_law,Equations_nzero,Equations_nlin,Equations_nsat,Equations_pzero,Equations_plin,Equations_psat} from './Equations/EasyEquations'
+import data from './flashcardsData.json'
+import { fadeIn } from 'react-animations'
 
 class CreateCard extends React.Component {
     constructor() {
@@ -214,7 +144,9 @@ class CreateCard extends React.Component {
     constructor() {
       super();
       this.state = {
-        cards: fromJS([{
+         cards: 
+         fromJS([
+        {
           word: <div>
             <p>Ohm’s Law</p>
             <p>The resistor's current I in amps (A) is equal to the resistor's voltage V in volts (V) divided by the resistance R in ohms (Ω)</p>
@@ -253,6 +185,7 @@ class CreateCard extends React.Component {
 
         },
 
+
       ]),
         //cardNumber: 0
         cardNumber: Math.floor(Math.random() * (8 - 1 + 1)) + 1
@@ -288,12 +221,7 @@ class CreateCard extends React.Component {
       const times = this.state.cards.size;
       let arr = [];
       [...Array(times)].map((e, num) => {
-        //const dotClass = num  === this.state.cardNumber ? 'active' : '';
         arr.push(
-          // <span 
-          //   className={`card-container__dot fa fa-circle ${dotClass}`}
-          //   onClick={() => this.setState({cardNumber: num})}
-          // />
         )
       });
       return arr;
@@ -330,9 +258,6 @@ class CreateCard extends React.Component {
               /> 
             : ''}
           {this.generateCards()}
-          {/* <div className='card-container__dots-wrapper'>
-            {this.generateDots()}
-          </div> */}
         </div>
      );
     }
@@ -352,6 +277,8 @@ class CreateCard extends React.Component {
   }
   
   function Flashcards(){
-      return(<Main />)
+      return(<div> 
+                <Main />               
+            </div>)
   }
 export default Flashcards

@@ -105,8 +105,8 @@ class FourthQuiz extends React.Component {
       } else {
         return (
           <div className="App">
+           <div id="timer"><Timer startCount='0'/></div>
             <h1>{this.state.questions} </h1>
-            <Timer startCount={this.state.count}/>
             {/* {this.setState({count:this.state.count})} */}
             <span>{`Questions ${idx}  out of ${4} remaining `}</span>
             {options.map(option => (

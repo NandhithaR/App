@@ -11,7 +11,7 @@ import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import {Ohms_law,Equations_nzero,Equations_nlin,Equations_nsat,Equations_pzero,Equations_plin,Equations_psat} from './Equations/EasyEquations'
-import data from './flashcardsData.json'
+import data from './Equations/FlashcardContent'
 import { fadeIn } from 'react-animations'
 
 class CreateCard extends React.Component {
@@ -145,7 +145,7 @@ class CreateCard extends React.Component {
       super();
       this.state = {
          cards: 
-         fromJS([
+         fromJS([ 
         {
           word: <div>
             <p>Ohm’s Law</p>
